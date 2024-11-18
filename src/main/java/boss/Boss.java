@@ -130,7 +130,6 @@ public class Boss {
         try {
             updateListData();
             Map<String, Set<String>> data = new HashMap<>();
-            data.put("blackCompanies", blackCompanies);
             data.put("blackRecruiters", blackRecruiters);
             data.put("blackJobs", blackJobs);
             String json = customJsonFormat(data);
@@ -457,7 +456,7 @@ public class Boss {
     }
 
     private static void RandomWait() {
-        SeleniumUtil.sleep(JobUtils.getRandomNumberInRange(1, 3));
+        SeleniumUtil.sleep(JobUtils.getRandomNumberInRange(3, 8));
     }
 
     private static boolean isDeadHR() {
@@ -484,13 +483,14 @@ public class Boss {
             return true;
         }
 
-        if (text.contains("985") || text.contains("211")) {
+        if (text.contains("985") || text.contains("211") || text.contains("双一流")) {
             log.info("岗位要求92爷，跳过");
             return true;
         }
 
-        if (text.contains("安卓") || text.contains("android") || text.contains("Android") || text.contains("客户端")) {
-            log.info("岗位要求安卓，跳过");
+        Set<String> blackJobs = Set.of("安卓", "移动", "外包", "android", "可转正", "大模型", "标注", "挖掘", "Android", "视觉", "安全", "大数据", "客户端");
+        if (blackJobs.stream().anyMatch(text::contains)) {
+            log.info("岗位不符，跳过");
             return true;
         }
 

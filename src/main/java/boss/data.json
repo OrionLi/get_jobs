@@ -1,15 +1,23 @@
 {
-  "blackCompanies": [
-
-  ],
-  "blackJobs": [
-    "视觉",
-    "设计",
-    "外包",
-    "现场",
-    "驻场"
-  ],
-  "blackRecruiters": [
-    "猎头"
-  ]
+    "blackCompanies": [
+    ],
+    "blackJobs": [
+        "安卓",
+        "移动",
+        "外包",
+        "android",
+        "可转正",
+        "大模型",
+        "标注",
+        "测试",
+        "挖掘",
+        "Android",
+        "视觉",
+        "安全",
+        "大数据",
+        "客户端"
+    ],
+    "blackRecruiters": [
+        "猎头"
+    ]
 }

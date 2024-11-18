@@ -58,7 +58,7 @@ public class JobUtils {
         switch (platform) {
             case BOSS -> {
                 BossScheduled.postJobs();
-                scheduleTaskAtTime(platformName, 10, 0, BossScheduled::postJobs);
+                scheduleTaskAtTime(platformName, 10, 20, BossScheduled::postJobs);
                 scheduleTaskAtTime(platformName, 15, 0, BossScheduled::postJobs);
             }
             case JOB51 -> {
